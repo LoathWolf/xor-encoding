@@ -1,0 +1,16 @@
+unsigned char KEY = 0x3B;
+int FILE_SIZE;
+int COUNT = 0;
+
+void encrypt(FILE* infile, FILE* outfile)
+{
+
+  for (i = 0; fgetc(infile) != EOF; i++)
+  {
+      fputc(ch ^ KEY[COUNT], outfile);
+
+      COUNT++;
+      if (COUNT == strlen(FILE_SIZE))
+        COUNT = 0;
+  }
+}
